@@ -7,35 +7,35 @@
 
 <script setup>
 useHead({
-  title: "Wasted Spaces",
+  title: "Bookyoursurf",
   meta: [
     { name: "viewport", content: "width=device-width, initial-scale=1" },
     { charset: "utf-8" },
     {
       name: "description",
       content:
-        "Wasted Spaces is een online leegstandskaart waarop leegstand in jouw omgeving in kaart wordt gebracht via een open-source platform."
+        "Discover trusted coaches, breathtaking surf photography, unforgettable lessons, local guides, and the gear that keeps you moving—all in one seamless app for every surfer."
     },
     { name: "format-detection", content: "telephone=no" },
     // Open Graph / Facebook
     { property: "og:type", content: "website" },
     { property: "og:image", content: "/images/activation-social-share.png" },
     { property: "og:url", content: "https://wastedspaces.org" },
-    { property: "og:title", content: "Wasted Spaces" },
+    { property: "og:title", content: "Bookyoursurf" },
     {
       property: "og:description",
       content:
-        "Wasted Spaces is een online leegstandskaart waarop leegstand in jouw omgeving in kaart wordt gebracht via een open-source platform."
+        "Discover trusted coaches, breathtaking surf photography, unforgettable lessons, local guides, and the gear that keeps you moving—all in one seamless app for every surfer."
     },
     // Twitter
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:image", content: "/images/activation-social-share.png" },
     { name: "twitter:url", content: "https://wastedspaces.org" },
-    { name: "twitter:title", content: "Wasted Spaces" },
+    { name: "twitter:title", content: "Bookyoursurf" },
     {
       name: "twitter:description",
       content:
-        "Wasted Spaces is een online leegstandskaart waarop leegstand in jouw omgeving in kaart wordt gebracht via een open-source platform."
+        "Discover trusted coaches, breathtaking surf photography, unforgettable lessons, local guides, and the gear that keeps you moving—all in one seamless app for every surfer."
     }
   ],
   link: [

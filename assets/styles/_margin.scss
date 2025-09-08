@@ -4,41 +4,41 @@
   @return "#{$integer}-#{$decimal}";
 }
 
-@for $i from 1 through 16 {
+@for $i from 1 through 64 {
   $value: $i * 0.25;
   $class-suffix: decimal-to-class($value);
-  
+
   // All margins
   .m-#{$class-suffix} {
     margin: #{$value}rem;
   }
-  
+
   // Margin top
   .mt-#{$class-suffix} {
     margin-top: #{$value}rem;
   }
-  
+
   // Margin bottom
   .mb-#{$class-suffix} {
     margin-bottom: #{$value}rem;
   }
-  
+
   // Margin left
   .ml-#{$class-suffix} {
     margin-left: #{$value}rem;
   }
-  
+
   // Margin right
   .mr-#{$class-suffix} {
     margin-right: #{$value}rem;
   }
-  
+
   // Margin top and bottom
   .mtb-#{$class-suffix} {
     margin-top: #{$value}rem;
     margin-bottom: #{$value}rem;
   }
-  
+
   // Margin left and right
   .mlr-#{$class-suffix} {
     margin-left: #{$value}rem;

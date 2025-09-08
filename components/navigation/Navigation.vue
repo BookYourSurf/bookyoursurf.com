@@ -1,24 +1,23 @@
-  <template>
-    <nav class="navigation">
-     <div class="navigation__content">
+<template>
+  <nav class="navigation">
+    <div class="navigation__content">
       <Icon icon="logo" class="navigation__logo color-primary-orange"></Icon>
-      <ul class = "navigation__items"> 
-        <li class = "navigation__item"> 
+      <ul class="navigation__items">
+        <li class="navigation__item">
           <NuxtLink to="/list-business"> How it works </NuxtLink>
         </li>
-        <li class = "navigation__item"> 
+        <li class="navigation__item">
           <NuxtLink to="/list-business"> List your business </NuxtLink>
         </li>
         <li>
-        <Button class="primary" button-text="Stay informed"></Button>
-      </li>
+          <Button class="button--primary">Stay informed</Button>
+        </li>
       </ul>
-      </div>  
-    </nav>
-  </template>
+    </div>
+  </nav>
+</template>
 
 <script setup lang="ts">
-
 // Component logic will go here
 </script>
 
@@ -27,8 +26,11 @@
   position: fixed;
   top: 0px;
   width: 100%;
+  height: $navigation-height;
   display: flex;
   justify-content: center;
+  z-index: 1000;
+  background-color: $white;
 }
 .navigation__logo {
   display: flex;
@@ -45,10 +47,10 @@
   padding: 1rem 1.5rem;
 }
 .navigation__items {
-  display: flex;    
+  display: flex;
   list-style-type: none;
   align-items: center;
-  gap: 12px
+  gap: 12px;
 }
 .navigation__item {
   padding: 1rem 1rem;

@@ -21,11 +21,16 @@ export default defineNuxtConfig({
   modules: ["@nuxt/eslint", "@nuxtjs/leaflet", "@nuxtjs/google-fonts"],
   googleFonts: {
     families: {
-      Jost: [400, 500, 600, 700]
+      Jost: [200, 300, 400, 500, 600, 700]
     },
     display: "swap"
   },
-  components: ["~/components/navigation", "~/components/common"],
+  components: [
+    "~/components/navigation",
+    "~/components/common",
+    "~/components/home",
+    "~/components/form"
+  ],
   css: ["/assets/styles/index.scss"],
   vite: {
     css: {

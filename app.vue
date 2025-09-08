@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Navigation/>
+    <Navigation />
     <NuxtPage />
   </div>
 </template>
@@ -47,22 +47,20 @@ useHead({
 
 <style lang="scss">
 html {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  height: 100vh;
-  overflow: hidden;
 
   @include for-tablet-landscape-down {
     font-size: 16px;
   }
 }
 
-.layout {
-  height: 100%;
+body {
+  padding-top: $navigation-height;
 }
 </style>

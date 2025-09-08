@@ -1,26 +1,47 @@
-// All paddings
-.p-1-0 {
-  padding: 1rem;
+@function decimal-to-class($value) {
+  $integer: floor($value);
+  $decimal: round(($value - $integer) * 100);
+  @return "#{$integer}-#{$decimal}";
 }
 
-//Padding top
-.pt-1-0 {
-  padding-top: 1rem;
-}
+@for $i from 1 through 64 {
+  $value: $i * 0.25;
+  $class-suffix: decimal-to-class($value);
 
-//Padding top and bottom
-.ptb-0-5 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
+  // All padding
+  .p-#{$class-suffix} {
+    padding: #{$value}rem;
+  }
 
-.ptb-1-0 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
+  // Padding top
+  .pt-#{$class-suffix} {
+    padding-top: #{$value}rem;
+  }
 
-//Padding left and right
-.plr-1-0 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  // Padding bottom
+  .pb-#{$class-suffix} {
+    padding-bottom: #{$value}rem;
+  }
+
+  // Padding left
+  .pl-#{$class-suffix} {
+    padding-left: #{$value}rem;
+  }
+
+  // Padding right
+  .pr-#{$class-suffix} {
+    padding-right: #{$value}rem;
+  }
+
+  // Padding top and bottom
+  .ptb-#{$class-suffix} {
+    padding-top: #{$value}rem;
+    padding-bottom: #{$value}rem;
+  }
+
+  // Padding left and right
+  .plr-#{$class-suffix} {
+    padding-left: #{$value}rem;
+    padding-right: #{$value}rem;
+  }
 }

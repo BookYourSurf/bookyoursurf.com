@@ -1,0 +1,47 @@
+@function decimal-to-class($value) {
+  $integer: floor($value);
+  $decimal: round(($value - $integer) * 100);
+  @return "#{$integer}-#{$decimal}";
+}
+
+@for $i from 1 through 16 {
+  $value: $i * 0.25;
+  $class-suffix: decimal-to-class($value);
+  
+  // All margins
+  .m-#{$class-suffix} {
+    margin: #{$value}rem;
+  }
+  
+  // Margin top
+  .mt-#{$class-suffix} {
+    margin-top: #{$value}rem;
+  }
+  
+  // Margin bottom
+  .mb-#{$class-suffix} {
+    margin-bottom: #{$value}rem;
+  }
+  
+  // Margin left
+  .ml-#{$class-suffix} {
+    margin-left: #{$value}rem;
+  }
+  
+  // Margin right
+  .mr-#{$class-suffix} {
+    margin-right: #{$value}rem;
+  }
+  
+  // Margin top and bottom
+  .mtb-#{$class-suffix} {
+    margin-top: #{$value}rem;
+    margin-bottom: #{$value}rem;
+  }
+  
+  // Margin left and right
+  .mlr-#{$class-suffix} {
+    margin-left: #{$value}rem;
+    margin-right: #{$value}rem;
+  }
+}

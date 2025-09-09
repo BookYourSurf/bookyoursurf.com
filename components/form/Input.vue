@@ -5,7 +5,7 @@
       v-bind="$attrs"
       :id="id"
       :type="type"
-      :placeholder="placeholder"
+      :placeholder="placeholder && !label ? placeholder : undefined"
       :name="name"
       :value="modelValue"
       @input="
@@ -76,6 +76,10 @@ defineEmits(["update:modelValue"])
 <style lang="scss" scoped>
 label {
   background: white;
+  position: relative;
+  bottom: -12px;
+  left: 8px;
+  padding: 2px 2px;
 }
 input {
   width: 100%;

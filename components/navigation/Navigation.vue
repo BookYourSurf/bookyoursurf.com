@@ -1,7 +1,9 @@
 <template>
   <nav class="navigation">
     <div class="navigation__content">
-      <Icon icon="logo" class="navigation__logo color-primary-orange"></Icon>
+      <NuxtLink to="/">
+        <Icon icon="logo" class="navigation__logo color-primary-orange"></Icon>
+      </NuxtLink>
       <ul class="navigation__items">
         <li class="navigation__item">
           <NuxtLink to="/list-business"> How it works </NuxtLink>

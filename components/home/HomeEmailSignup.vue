@@ -7,13 +7,14 @@
       {{ content }}
     </p>
     <Form
-      class="home-email-signup__form mt-1-0"
+      class="home-email-signup__form mt-0-50"
       :submit-text="submitText"
       @submit="onEmailSubmit"
     >
       <Input
         v-model="email"
         type="email"
+        label="Email"
         name="email"
         placeholder="Enter your email address"
         required

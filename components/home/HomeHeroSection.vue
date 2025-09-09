@@ -2,13 +2,11 @@
   <div class="home-hero">
     <Image class="home-hero__image" :image="image" />
     <div class="home-hero__content">
-      <h1 class="home-hero__heading pr-6-0">
-        {{ headingParts.restOfText }}
-        <span class="last-word">{{ headingParts.last }}</span>
-      </h1>
-      <p class="home-hero__subheading mt-1-0 pr-6-0">
-        {{ content }}
-      </p>
+      <h1 class="home-hero__heading pr-6-0" v-html="formattedHeading"></h1>
+      <p
+        class="home-hero__subheading mt-1-0 pr-6-0"
+        v-html="formattedContent"
+      ></p>
     </div>
   </div>
 </template>
@@ -20,19 +18,17 @@ const props = defineProps<{
   content: string
 }>()
 
-const headingParts = computed(() => {
-  const words = props.heading.split(" ")
-  const lastWord = words.pop() || ""
-  const restOfText = words.join(" ")
-  return { restOfText, last: lastWord }
-})
+const { formatTextWithUnderscores } = useTextFormatter()
+
+const formattedHeading = computed(() =>
+  formatTextWithUnderscores(props.heading)
+)
+const formattedContent = computed(() =>
+  formatTextWithUnderscores(props.content)
+)
 </script>
 
 <style lang="scss" scoped>
-.last-word {
-  color: $primary-orange;
-  text-decoration: underline;
-}
 .home-hero {
   display: flex;
   flex-direction: row;

@@ -1,9 +1,9 @@
 *:focus {
-    outline: none;
-  }
-  
+  outline: none;
+}
+
 .hdpi.pac-logo::after {
-    display: none;
+  display: none;
 }
 
 .flex-column {
@@ -17,4 +17,9 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+
+.highlighted-text {
+  color: $primary-orange;
+  text-decoration: underline;
 }

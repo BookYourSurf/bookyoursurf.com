@@ -3,13 +3,13 @@
     <HomeHeroSection
       class="mt-2-0"
       image="./images/surf_lesson_bali.png"
-      heading="One app for all&nbsp;things surfing"
+      heading="One app for all&nbsp;things _surfing_"
       content="Discover trusted coaches, breathtaking surf photography, unforgettable lessons, local guides, and the gear that keeps you moving—all in one seamless app for every surfer."
     ></HomeHeroSection>
     <HomeEmailSignup
       class="index__home-email-signup"
       heading="Join the journey"
-      content="We’re building the all-in-one surf app—and you can watch it unfold. Get behind-the-scenes updates and be ready when it launches."
+      content="We’re building a all-in-one surf app—and you can watch it unfold. Get behind-the-scenes updates and be ready when it launches."
       submit-text="Notify me!"
     />
   </div>

@@ -4,7 +4,11 @@
       <h1 class="home-hero__heading" v-html="formattedHeading"></h1>
       <p class="home-hero__subheading" v-html="formattedContent"></p>
     </div>
-    <Form> </Form>
+    <BusinessSignupForm
+      heading="Ready to grow your business?"
+      content="Fill out the form below to see what Bookyoursurf can do for your company."
+      submit-text="Get started!"
+    />
   </div>
 </template>
 
@@ -25,11 +29,6 @@ const formattedContent = computed(() =>
 </script>
 
 <style lang="scss" scoped>
-.highlighted-text {
-  color: $primary-orange;
-  text-decoration: underline;
-}
-
 .home-hero {
   display: flex;
   flex-direction: row;
@@ -37,7 +36,7 @@ const formattedContent = computed(() =>
 
 .home-hero__heading,
 .home-hero__subheading {
-  text-align: center;
+  text-align: left;
 }
 
 .home-hero__content {

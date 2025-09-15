@@ -3,11 +3,11 @@
     <h2 class="home-email-signup__heading">
       {{ heading }}
     </h2>
-    <p class="home-email-signup__subheading mt-0-50">
+    <p class="home-email-signup__subheading mt-0-25">
       {{ content }}
     </p>
     <Form
-      class="home-email-signup__form mt-0-50"
+      class="home-email-signup__form mt-0-25"
       :submit-text="submitText"
       @submit="onEmailSubmit"
     >
@@ -59,7 +59,6 @@ function onEmailSubmit(values: Record<string, unknown>) {
 .home-email-signup__form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   align-items: left;
 }
 </style>

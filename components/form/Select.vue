@@ -1,18 +1,36 @@
 <template>
-  <div class="input">
+  <div class="select">
     <label v-if="label" :for="id ? id : name">{{ label }}</label>
-    <input
+    <select
       v-bind="$attrs"
       :id="id ? id : name"
-      :type="type"
-      :placeholder="placeholder && !label ? placeholder : undefined"
+      :multiple="multiple"
+      :disabled="disabled"
+      :required="required"
       :name="name"
-      :value="modelValue"
       :autocomplete="autocomplete ? 'on' : 'off'"
-      @input="
-        $emit('update:modelValue', ($event.target as HTMLInputElement).value)
+      :value="modelValue"
+      @change="
+        $emit(
+          'update:modelValue',
+          multiple
+            ? [...($event.target as HTMLSelectElement).selectedOptions].map((o) => o.value)
+            : ($event.target as HTMLSelectElement).value
+        )
       "
-    />
+    >
+      <option v-if="placeholder" value="" disabled selected hidden>
+        {{ placeholder }}
+      </option>
+      <option
+        v-for="(option, index) in options"
+        :key="index"
+        :value="option.value"
+        class="select__option"
+      >
+        {{ option.label }}
+      </option>
+    </select>
     <ValidationError :errors="errors"/>
   </div>
 </template>
@@ -20,7 +38,7 @@
 <script setup lang="ts">
 defineProps({
   modelValue: {
-    type: [String, Number],
+    type: [String, Number, Array],
     default: ""
   },
   errors: {
@@ -31,17 +49,17 @@ defineProps({
     type: String,
     required: true
   },
-  type: { type: String, default: "text" },
+  options: {
+    type: Object,
+    required: true
+  },
+  multiple: { type: Boolean, default: false },
   placeholder: {
     type: String,
     default: ""
   },
   disabled: Boolean,
-  required: {
-    type: Boolean,
-    default: false
-  },
-  readonly: Boolean,
+  required: Boolean,
   name: {
     type: String,
     default: ""
@@ -50,41 +68,21 @@ defineProps({
     type: String,
     default: ""
   },
-  autofocus: {
-    type: Boolean,
-    default: false
+  class: {
+    type: String,
+    default: ""
   },
   autocomplete: {
     type: Boolean,
     default: false
-  },
-  maxlength: {
-    type: Number,
-    default: 0
-  },
-  minlength: {
-    type: Number,
-    default: 0
-  },
-  pattern: {
-    type: String,
-    default: ""
-  },
-  step: {
-    type: Number,
-    default: 0
-  },
-  title: {
-    type: String,
-    default: ""
   }
 })
 
-defineEmits(["update:modelValue"])
+defineEmits(["update:modelValue"]) // Emits update event for v-model
 </script>
 
 <style lang="scss" scoped>
-.input {
+.select {
   width: 100%;
 }
 label {
@@ -94,7 +92,7 @@ label {
   left: 8px;
   padding: 2px 2px;
 }
-input {
+select {
   width: 100%;
   padding: 8px 12px;
   outline: none;

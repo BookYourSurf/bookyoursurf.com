@@ -23,6 +23,7 @@
   background-size: cover;
   width: 100%;
   position: absolute;
+  height: 100%;
 }
 .index__home-email-signup {
   position: relative;

@@ -1,8 +1,8 @@
 <template>
-  <form @submit.prevent="onSubmit">
+  <form novalidate @submit.prevent="onSubmit">
     <slot />
     <slot name="actions">
-      <Button type="submit" class="button--primary button--fullwidth">{{
+      <Button type="submit" class="button--primary button--fullwidth mt-0-50">{{
         submitText
       }}</Button>
     </slot>

@@ -1,6 +1,6 @@
 <template>
   <!-- eslint-disable vue/no-v-html -->
-  <div v-if="icon" class="base-icon" v-html="icon" />
+  <div v-if="icon" class="icon" v-html="icon" />
 </template>
 
 <script setup lang="ts">
@@ -17,7 +17,6 @@ const icons = Object.fromEntries(
     }
   )
 )
-console.log(icons)
 
 // Lazily load the icon
 const icon = props.icon && (await icons?.[props.icon]?.())
@@ -30,6 +29,20 @@ const icon = props.icon && (await icons?.[props.icon]?.())
 .color-primary-orange {
   :deep(svg) {
     color: $primary-orange;
+  }
+}
+
+.color-white {
+  :deep(svg) {
+    color: $white;
+  }
+}
+.icon--15x15 {
+  width: 15px;
+  height: 15px;
+  :deep(svg) {
+    width: 15px;
+    height: 15px;
   }
 }
 </style>

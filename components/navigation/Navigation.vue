@@ -12,7 +12,9 @@
           <NuxtLink to="/list-business"> List your business </NuxtLink>
         </li>
         <li>
-          <Button class="button--primary">Stay informed</Button>
+          <NuxtLink to="/map"> 
+          <Button class="button--primary" > Book your surf! </Button>
+          </NuxtLink>
         </li>
       </ul>
     </div>

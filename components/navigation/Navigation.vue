@@ -12,8 +12,8 @@
           <NuxtLink to="/list-business"> List your business </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/map"> 
-          <Button class="button--primary" > Book your surf! </Button>
+          <NuxtLink to="/map">
+            <Button class="button--primary"> Book your surf! </Button>
           </NuxtLink>
         </li>
       </ul>
@@ -35,6 +35,7 @@
   justify-content: center;
   z-index: 1000;
   background-color: $white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 .navigation__logo {
   display: flex;

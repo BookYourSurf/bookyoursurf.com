@@ -1,9 +1,16 @@
-export interface SurfLocationDetails {
+export interface SurfLocation {
   id: string
+  name: string
   address: string
-  city: string
   type: SurfLocationType
   latLng: GeoPoint
+  aggregatedRating: SurfLocationRating
+  image: string
+}
+
+export interface SurfLocationRating {
+  rating: number
+  reviewCount: number
 }
 
 export interface GeoPoint {

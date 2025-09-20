@@ -32,6 +32,12 @@ const icon = props.icon && (await icons?.[props.icon]?.())
   }
 }
 
+.color-grey {
+  :deep(svg) {
+    color: $grey;
+  }
+}
+
 .color-white {
   :deep(svg) {
     color: $white;

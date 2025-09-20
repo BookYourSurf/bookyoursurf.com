@@ -6,19 +6,6 @@
   display: none;
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .highlighted-text {
   color: $primary-orange;
   text-decoration: underline;

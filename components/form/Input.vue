@@ -13,7 +13,7 @@
         $emit('update:modelValue', ($event.target as HTMLInputElement).value)
       "
     />
-    <ValidationError :errors="errors"/>
+    <ValidationError :errors="errors" />
   </div>
 </template>
 

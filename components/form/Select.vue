@@ -14,7 +14,9 @@
         $emit(
           'update:modelValue',
           multiple
-            ? [...($event.target as HTMLSelectElement).selectedOptions].map((o) => o.value)
+            ? [...($event.target as HTMLSelectElement).selectedOptions].map(
+                (o) => o.value
+              )
             : ($event.target as HTMLSelectElement).value
         )
       "
@@ -31,7 +33,7 @@
         {{ option.label }}
       </option>
     </select>
-    <ValidationError :errors="errors"/>
+    <ValidationError :errors="errors" />
   </div>
 </template>
 

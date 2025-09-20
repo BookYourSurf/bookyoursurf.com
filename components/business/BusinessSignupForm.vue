@@ -11,7 +11,7 @@
         v-model="r$.$value.email"
         :errors="r$.email.$errors"
         class="home-email-signup__input"
-        placeholder="Enter your email address" 
+        placeholder="Enter your email address"
         type="email"
         label="Email"
         name="email"
@@ -50,21 +50,20 @@
         />
       </InputGroup>
       <Select
-          label="Business type"
-          name="business_type"
-          :v-model="r$.$value.businessType"
-          :errors="r$.businessType.$errors"
-          :options="businessTypes"
-          placeholder="Select most applicable"
-          required
-        />       
-        <Input
-          v-model="r$.$value.location"
-          :errors="r$.location.$errors"
-          label="Location"
-          name="location"
-        />
-
+        label="Business type"
+        name="business_type"
+        :v-model="r$.$value.businessType"
+        :errors="r$.businessType.$errors"
+        :options="businessTypes"
+        placeholder="Select most applicable"
+        required
+      />
+      <Input
+        v-model="r$.$value.location"
+        :errors="r$.location.$errors"
+        label="Location"
+        name="location"
+      />
     </Form>
   </div>
 </template>
@@ -78,14 +77,20 @@ defineProps<{
   submitText: string
 }>()
 
-
-
 const emit = defineEmits<{
   (e: "submit", values: Record<string, unknown>): void
 }>()
 
 const { r$ } = useRegle(
-  { email: "", firstName: "", lastName: "", businessName: "", businessType: "", websiteUrl: "", location:"" },
+  {
+    email: "",
+    firstName: "",
+    lastName: "",
+    businessName: "",
+    businessType: "",
+    websiteUrl: "",
+    location: ""
+  },
   {
     email: { email, required },
     firstName: { required },
@@ -96,7 +101,9 @@ const { r$ } = useRegle(
     location: { required }
   },
   {
-     silent: true, lazy: true, rewardEarly: true
+    silent: true,
+    lazy: true,
+    rewardEarly: true
   }
 )
 

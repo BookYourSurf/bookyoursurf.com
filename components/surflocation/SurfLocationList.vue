@@ -1,7 +1,7 @@
 <template>
-  <div class="surf-location-list padding--item">
+  <div class="surf-location-list">
     <SurfLocationListItem
-      v-for="location in surfLocations"
+      v-for="location in filteredLocations"
       :key="location.id"
       :surf-location="location"
     />
@@ -9,11 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import type { SurfLocation } from "~/types/types"
-
-defineProps<{
-  surfLocations: SurfLocation[]
-}>()
+const { filteredLocations } = useSurfLocations()
 </script>
 
 <style lang="scss">

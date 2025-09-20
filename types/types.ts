@@ -6,6 +6,7 @@ export interface SurfLocation {
   latLng: GeoPoint
   aggregatedRating: SurfLocationRating
   image: string
+  description: string
 }
 
 export interface SurfLocationRating {

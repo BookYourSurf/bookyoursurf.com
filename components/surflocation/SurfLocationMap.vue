@@ -1,26 +1,18 @@
 <template>
-  <div class="map-container">
-    <template v-if="google">
-      <Map
-        :google="google"
-        :map-config="mapConfig"
-        :center="{ lat: center.latitude, lng: center.longitude }"
-      >
-        <template #default="{ map }">
-          <SurfLocationMarker
-            v-for="location in filteredLocations"
-            :key="location.id"
-            :map="map"
-            :location="location"
-            :google="google"
-            :position="{
-              lat: location.latLng.lat,
-              lng: location.latLng.lng
-            }"
-            :title="location.address"
-          />
-        </template>
-      </Map>
+  <div class="surf-location-map">
+    <div ref="mapContainer" class="map" id="map"/>
+    <template v-if="map">
+      <SurfLocationMarker
+        v-for="location in filteredLocations"
+        :key="location.id"
+        :map="map"
+        :location="location"
+        :position="{
+          lat: location.latLng.lat,
+          lng: location.latLng.lng
+        }"
+        :title="location.address"
+      />
     </template>
   </div>
 </template>
@@ -33,13 +25,12 @@ const props = defineProps<{
   zoom?: number
 }>()
 
-defineEmits<{
-  (e: "locationSelected", latLng: GeoPoint): void
-}>()
-
 const { google } = useGoogleMaps()
 const config = useRuntimeConfig()
-const { filteredLocations } = useSurfLocations()
+const { filteredLocations, selectedLocation } = useSurfLocations()
+
+const mapContainer = ref<HTMLElement | null>(null)
+const map = ref<google.maps.Map | null>(null)
 
 const mapConfig = {
   center: { lat: props.center.latitude, lng: props.center.longitude },
@@ -48,12 +39,37 @@ const mapConfig = {
   clickableIcons: false,
   disableDefaultUI: true
 }
+
+// Watch for Google Maps to be loaded
+watch([google, mapContainer], async ([googleValue, container]) => {
+  if (googleValue && container && !map.value) {
+    try {
+      map.value = new googleValue.maps.Map(container, mapConfig)
+    } catch (error) {
+      console.error("Error loading map: ", error)
+    }
+  }
+}, { immediate: true })
+
+// Watch for selected location changes and pan to it
+watch(selectedLocation, (newSelectedLocation) => {
+  if (map.value && newSelectedLocation) {    
+    map.value.panTo(newSelectedLocation.latLng)
+  }
+})
 </script>
 
 <style scoped lang="scss">
-.map-container {
+.surf-location-map {
   position: relative;
   height: calc(100vh - 80px);
   width: 100%;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
 }
 </style>

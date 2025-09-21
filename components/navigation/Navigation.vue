@@ -33,7 +33,7 @@
   height: $navigation-height;
   display: flex;
   justify-content: center;
-  z-index: 1000;
+  z-index: 2;
   background-color: $white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }

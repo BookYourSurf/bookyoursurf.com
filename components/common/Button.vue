@@ -14,7 +14,7 @@
 }
 .button {
   border-radius: $border-radius;
-  padding: 0.75rem 1.25rem;
+  padding: $padding-button;
   display: flex;
   justify-content: center;
   align-items: center;

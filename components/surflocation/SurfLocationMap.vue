@@ -1,6 +1,6 @@
 <template>
   <div class="surf-location-map">
-    <div ref="mapContainer" class="map" id="map"/>
+    <div ref="mapContainer" class="map" id="map" />
     <template v-if="map">
       <SurfLocationMarker
         v-for="location in filteredLocations"
@@ -41,19 +41,23 @@ const mapConfig = {
 }
 
 // Watch for Google Maps to be loaded
-watch([google, mapContainer], async ([googleValue, container]) => {
-  if (googleValue && container && !map.value) {
-    try {
-      map.value = new googleValue.maps.Map(container, mapConfig)
-    } catch (error) {
-      console.error("Error loading map: ", error)
+watch(
+  [google, mapContainer],
+  async ([googleValue, container]) => {
+    if (googleValue && container && !map.value) {
+      try {
+        map.value = new googleValue.maps.Map(container, mapConfig)
+      } catch (error) {
+        console.error("Error loading map: ", error)
+      }
     }
-  }
-}, { immediate: true })
+  },
+  { immediate: true }
+)
 
 // Watch for selected location changes and pan to it
 watch(selectedLocation, (newSelectedLocation) => {
-  if (map.value && newSelectedLocation) {    
+  if (map.value && newSelectedLocation) {
     map.value.panTo(newSelectedLocation.latLng)
   }
 })

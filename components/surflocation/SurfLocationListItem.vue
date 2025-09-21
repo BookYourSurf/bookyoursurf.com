@@ -1,31 +1,31 @@
 <template>
-    <div class="surf-location-list-item__container" ref="listItemRef">
-      <div 
-        class="surf-location-list-item flex-row" 
-        :class="{selected: isSelected}"
-        @click="handleItemClick"
-      >
-        <Image
-          class="surf-location-list-item__image ratio--15to16"
-          :image="surfLocation.image"
+  <div class="surf-location-list-item__container" ref="listItemRef">
+    <div
+      class="surf-location-list-item flex-row"
+      :class="{ selected: isSelected }"
+      @click="handleItemClick"
+    >
+      <Image
+        class="surf-location-list-item__image ratio--15to16"
+        :image="surfLocation.image"
+      />
+      <div class="surf-location-list-item__content ml-1-0">
+        <span class="surf-location-list-item__type weight-500">
+          {{ getLocationTypeLabel(surfLocation.type) }}
+        </span>
+        <ItemTitleSubtitle
+          :title="surfLocation.name"
+          :subtitle="surfLocation.address"
+          class="mt-0-25"
         />
-        <div class="surf-location-list-item__content ml-1-0">
-          <span class="surf-location-list-item__type weight-500">
-            {{ getLocationTypeLabel(surfLocation.type) }}
-          </span>
-          <ItemTitleSubtitle
-            :title="surfLocation.name"
-            :subtitle="surfLocation.address"
-            class="mt-0-25"
-          />
-          <ItemRating
-            class="surf-location-list-item__rating"
-            :rating="surfLocation.aggregatedRating.rating"
-            :review-count="surfLocation.aggregatedRating.reviewCount"
-          />
-        </div>
+        <ItemRating
+          class="surf-location-list-item__rating"
+          :rating="surfLocation.aggregatedRating.rating"
+          :review-count="surfLocation.aggregatedRating.reviewCount"
+        />
       </div>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -55,7 +55,6 @@ const handleItemClick = () => {
   border-radius: $border-radius;
   border: 1px solid transparent;
   max-width: 420px;
-
 
   &:hover {
     background-color: rgba($primary-orange, 0.05);

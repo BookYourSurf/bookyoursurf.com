@@ -1,5 +1,5 @@
 .padding--item {
-  padding: 0 $padding-item;
+  padding: $padding-item $padding-item;
 }
 
 @function decimal-to-class($value) {

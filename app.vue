@@ -47,7 +47,7 @@ useHead({
 
 <style lang="scss">
 html {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 24px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -56,7 +56,7 @@ html {
   box-sizing: border-box;
 
   @include for-tablet-landscape-down {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

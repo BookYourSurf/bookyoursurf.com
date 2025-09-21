@@ -51,4 +51,12 @@ const icon = props.icon && (await icons?.[props.icon]?.())
     height: 15px;
   }
 }
+.icon--18x18 {
+  width: 18px;
+  height: 18px;
+  :deep(svg) {
+    width: 18px;
+    height: 18px;
+  }
+}
 </style>

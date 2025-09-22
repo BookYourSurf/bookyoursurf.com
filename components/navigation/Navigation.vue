@@ -35,7 +35,7 @@
   justify-content: center;
   z-index: 2;
   background-color: $white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: $box-shadow;
 }
 .navigation__logo {
   display: flex;
@@ -50,6 +50,7 @@
   max-width: $content-max-width;
   width: 100%;
   padding: 1rem 1.5rem;
+  align-items: center;
 }
 .navigation__items {
   display: flex;

@@ -60,6 +60,10 @@ export const useSurfLocations = () => {
     return grouped
   })
 
+  const filteredLocationIds = computed(
+    () => new Set(filteredLocations.value.map((location) => location.id))
+  )
+
   // Actions
   const setLocations = (newLocations: SurfLocation[]) => {
     locations.value = newLocations
@@ -132,6 +136,7 @@ export const useSurfLocations = () => {
     // Getters
     allLocations,
     filteredLocations,
+    filteredLocationIds,
     locationsByType,
 
     // Actions

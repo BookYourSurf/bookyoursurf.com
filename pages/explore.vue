@@ -1,6 +1,6 @@
 <template>
   <div class="map">
-    <SurfLocationFilter />
+    <SurfLocationFilter class="map__filters" />
     <div class="map__content">
       <SurfLocationList />
       <SurfLocationMap :center="center" :zoom="15" />
@@ -17,10 +17,17 @@ const center: GeoPoint = new GeoPoint(-8.8282633, 115.0879098)
 
 <style lang="scss" scoped>
 .map__content {
-  height: calc(100vh - 2 * $navigation-height);
+  height: calc(100vh - $navigation-height - 64px);
   width: 100%;
   display: flex;
   flex-direction: row;
   overflow: hidden;
+  position: relative;
+  top: 64px;
+}
+
+.map__filters {
+width: 100%;
+position: fixed;
 }
 </style>

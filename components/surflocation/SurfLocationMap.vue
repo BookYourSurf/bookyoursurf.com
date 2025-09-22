@@ -3,7 +3,7 @@
     <div ref="mapContainer" class="map" id="map" />
     <template v-if="map">
       <SurfLocationMarker
-        v-for="location in filteredLocations"
+        v-for="location in allLocations"
         :key="location.id"
         :map="map"
         :location="location"
@@ -12,6 +12,7 @@
           lng: location.latLng.lng
         }"
         :title="location.address"
+        :class="{ hidden: !filteredLocationIds.has(location.id) }"
       />
     </template>
   </div>
@@ -27,7 +28,7 @@ const props = defineProps<{
 
 const { google } = useGoogleMaps()
 const config = useRuntimeConfig()
-const { filteredLocations, selectedLocation } = useSurfLocations()
+const { filteredLocationIds, selectedLocation, allLocations  } = useSurfLocations()
 
 const mapContainer = ref<HTMLElement | null>(null)
 const map = ref<google.maps.Map | null>(null)
@@ -37,7 +38,8 @@ const mapConfig = {
   mapId: config.public.GOOGLE_MAPS_MAP_ID,
   zoom: props.zoom || 7.65,
   clickableIcons: false,
-  disableDefaultUI: true
+  disableDefaultUI: true,
+
 }
 
 // Watch for Google Maps to be loaded
@@ -66,7 +68,7 @@ watch(selectedLocation, (newSelectedLocation) => {
 <style scoped lang="scss">
 .surf-location-map {
   position: relative;
-  height: calc(100vh - 80px);
+  height: 100%p;
   width: 100%;
 }
 
@@ -75,5 +77,9 @@ watch(selectedLocation, (newSelectedLocation) => {
   width: 100%;
   position: absolute;
   right: 0;
+}
+
+.hidden {
+  display: none;
 }
 </style>

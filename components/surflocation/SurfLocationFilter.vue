@@ -55,5 +55,7 @@ const handleTypeChange = (value: string | null) => {
   z-index: 3;
   position: relative;
   background: $white;
+  box-shadow: $box-shadow;
+  border-top: 1px solid $light-grey;
 }
 </style>

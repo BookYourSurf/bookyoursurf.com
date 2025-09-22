@@ -85,7 +85,7 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<Emits>()
 
 // Generate unique ID for accessibility
-const dropdownId = `filter-dropdown-${Math.random().toString(36).substr(2, 9)}`
+const dropdownId = `filter-dropdown-${useId()}`
 
 // Reactive state
 const isOpen = ref(false)
@@ -142,7 +142,7 @@ onUnmounted(() => {
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .filter-dropdown__trigger {
@@ -151,7 +151,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   padding: $padding-button;
-  border: 1px solid #d1d5db;
+  border: 1px solid $grey;
   border-radius: $border-radius-pill;
   background-color: white;
   cursor: pointer;

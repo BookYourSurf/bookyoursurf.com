@@ -4,7 +4,7 @@
       <Button
         :id="dropdownId"
         ref="filterDropdownTrigger"
-        class="filter-dropdown__trigger button--light-grey"
+        class="filter-dropdown__trigger button--light-greybutton--light-grey"
         :aria-expanded="isOpen"
         :aria-haspopup="true"
         @click="toggleDropdown"
@@ -59,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+import Button from "./Button.vue"
 
 interface FilterOption {
   value: string
@@ -88,7 +89,7 @@ const dropdownId = `filter-dropdown-${useId()}`
 
 // Reactive state
 const isOpen = ref(false)
-const filterDropdownTrigger = ref<HTMLElement>()
+const filterDropdownTrigger = ref<InstanceType<typeof Button>>()
 const dropdownMenu = ref<HTMLDivElement>()
 
 // Computed properties
@@ -97,10 +98,24 @@ const selectedOption = computed(() =>
   props.options.find((option) => option.value === props.modelValue)
 )
 
+// Methods
+const toggleDropdown = () => {
+  isOpen.value = !isOpen.value
+  if (isOpen.value) {
+    nextTick(() => {
+      // Focus first option when opening
+      const firstOption = dropdownMenu.value?.querySelector(
+        "Button"
+      ) as HTMLButtonElement
+      firstOption?.focus()
+    })
+  }
+}
 
 const selectOption = (value: string | null) => {
   emit("update:modelValue", value)
   isOpen.value = false
+  filterDropdownTrigger.value?.$el?.focus()
 }
 
 const handleClickOutside = (event: Event) => {

@@ -1,12 +1,12 @@
-import type { SurfLocation } from "~/types/types"
-import { SurfLocationType } from "~/types/types"
+import type { SurfBusiness } from "~/types/types"
+import { SurfBusinessType } from "~/types/types"
 
-export const mockLocations: SurfLocation[] = [
+export const mockBusinesss: SurfBusiness[] = [
   {
     id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
     name: "Echo Beach",
     address: "Echo Beach, Canggu, Bali",
-    type: SurfLocationType.SURF_SPOT,
+    type: SurfBusinessType.SURF_SPOT,
     latLng: {
       lat: -8.65,
       lng: 115.1333
@@ -23,7 +23,7 @@ export const mockLocations: SurfLocation[] = [
     id: "b2c3d4e5-f6g7-8901-bcde-f23456789012",
     name: "Canggu Surf Shop",
     address: "Jl. Pantai Batu Bolong No. 8, Canggu, Bali",
-    type: SurfLocationType.SURF_SHOP,
+    type: SurfBusinessType.SURF_SHOP,
     latLng: {
       lat: -8.649,
       lng: 115.131
@@ -40,7 +40,7 @@ export const mockLocations: SurfLocation[] = [
     id: "c3d4e5f6-g7h8-9012-cdef-345678901234",
     name: "Bali Surf Guide - Made",
     address: "Canggu, Bali",
-    type: SurfLocationType.SURF_GUIDE,
+    type: SurfBusinessType.SURF_GUIDE,
     latLng: {
       lat: -8.65,
       lng: 115.13
@@ -57,7 +57,7 @@ export const mockLocations: SurfLocation[] = [
     id: "d4e5f6g7-h8i9-0123-def0-456789012345",
     name: "Batu Bolong Beach",
     address: "Batu Bolong Beach, Canggu, Bali",
-    type: SurfLocationType.SURF_SPOT,
+    type: SurfBusinessType.SURF_SPOT,
     latLng: {
       lat: -8.6489,
       lng: 115.1311
@@ -74,7 +74,7 @@ export const mockLocations: SurfLocation[] = [
     id: "e5f6g7h8-i9j0-1234-ef01-567890123456",
     name: "Bali Surf Coaching - Advanced",
     address: "Canggu, Bali",
-    type: SurfLocationType.SURF_COACHING,
+    type: SurfBusinessType.SURF_COACHING,
     latLng: {
       lat: -8.648,
       lng: 115.132
@@ -91,7 +91,7 @@ export const mockLocations: SurfLocation[] = [
     id: "f6g7h8i9-j0k1-2345-f012-678901234567",
     name: "Bali Surf Photography - Agung",
     address: "Uluwatu, Bali",
-    type: SurfLocationType.PHOTOGRAPHY,
+    type: SurfBusinessType.PHOTOGRAPHY,
     latLng: {
       lat: -8.828,
       lng: 115.086
@@ -108,7 +108,7 @@ export const mockLocations: SurfLocation[] = [
     id: "g7h8i9j0-k1l2-3456-0123-789012345678",
     name: "Uluwatu Beach",
     address: "Uluwatu Beach, Bali",
-    type: SurfLocationType.SURF_SPOT,
+    type: SurfBusinessType.SURF_SPOT,
     latLng: {
       lat: -8.8294,
       lng: 115.085
@@ -125,7 +125,7 @@ export const mockLocations: SurfLocation[] = [
     id: "h8i9j0k1-l2m3-4567-1234-890123456789",
     name: "Uluwatu Surf Shop",
     address: "Jl. Labuan Sait, Uluwatu, Bali",
-    type: SurfLocationType.SURF_SHOP,
+    type: SurfBusinessType.SURF_SHOP,
     latLng: {
       lat: -8.83,
       lng: 115.09
@@ -142,7 +142,7 @@ export const mockLocations: SurfLocation[] = [
     id: "i9j0k1l2-m3n4-5678-2345-901234567890",
     name: "Uluwatu Surf Guide - Ketut",
     address: "Uluwatu, Bali",
-    type: SurfLocationType.SURF_GUIDE,
+    type: SurfBusinessType.SURF_GUIDE,
     latLng: {
       lat: -8.83,
       lng: 115.08
@@ -159,7 +159,7 @@ export const mockLocations: SurfLocation[] = [
     id: "j0k1l2m3-n4o5-6789-3456-012345678901",
     name: "Padang Padang Beach",
     address: "Padang Padang Beach, Bali",
-    type: SurfLocationType.SURF_SPOT,
+    type: SurfBusinessType.SURF_SPOT,
     latLng: {
       lat: -8.825,
       lng: 115.08
@@ -176,7 +176,7 @@ export const mockLocations: SurfLocation[] = [
     id: "k1l2m3n4-o5p6-7890-4567-123456789012",
     name: "Beginner Surf Lessons",
     address: "Echo Beach, Canggu, Bali",
-    type: SurfLocationType.SURF_COACHING,
+    type: SurfBusinessType.SURF_COACHING,
     latLng: {
       lat: -8.651,
       lng: 115.134
@@ -193,7 +193,7 @@ export const mockLocations: SurfLocation[] = [
     id: "l2m3n4o5-p6q7-8901-5678-234567890123",
     name: "Canggu Surf Photography - Sari",
     address: "Canggu, Bali",
-    type: SurfLocationType.PHOTOGRAPHY,
+    type: SurfBusinessType.PHOTOGRAPHY,
     latLng: {
       lat: -8.649,
       lng: 115.13
@@ -210,7 +210,7 @@ export const mockLocations: SurfLocation[] = [
     id: "m3n4o5p6-q7r8-9012-6789-345678901234",
     name: "Bingin Beach",
     address: "Bingin Beach, Bali",
-    type: SurfLocationType.SURF_SPOT,
+    type: SurfBusinessType.SURF_SPOT,
     latLng: {
       lat: -8.82,
       lng: 115.075
@@ -227,7 +227,7 @@ export const mockLocations: SurfLocation[] = [
     id: "n4o5p6q7-r8s9-0123-7890-456789012345",
     name: "Seminyak Surf Shop",
     address: "Jl. Kayu Aya, Seminyak, Bali",
-    type: SurfLocationType.SURF_SHOP,
+    type: SurfBusinessType.SURF_SHOP,
     latLng: {
       lat: -8.68,
       lng: 115.17
@@ -244,7 +244,7 @@ export const mockLocations: SurfLocation[] = [
     id: "o5p6q7r8-s9t0-1234-8901-567890123456",
     name: "Dreamland Beach",
     address: "Dreamland Beach, Bali",
-    type: SurfLocationType.SURF_SPOT,
+    type: SurfBusinessType.SURF_SPOT,
     latLng: {
       lat: -8.815,
       lng: 115.07
@@ -261,7 +261,7 @@ export const mockLocations: SurfLocation[] = [
     id: "p6q7r8s9-t0u1-2345-9012-678901234567",
     name: "Sanur Surf Guide - Wayan",
     address: "Sanur, Bali",
-    type: SurfLocationType.SURF_GUIDE,
+    type: SurfBusinessType.SURF_GUIDE,
     latLng: {
       lat: -8.69,
       lng: 115.26
@@ -278,7 +278,7 @@ export const mockLocations: SurfLocation[] = [
     id: "q7r8s9t0-u1v2-3456-0123-789012345678",
     name: "Kuta Beach Surf Spot",
     address: "Kuta Beach, Bali",
-    type: SurfLocationType.SURF_SPOT,
+    type: SurfBusinessType.SURF_SPOT,
     latLng: {
       lat: -8.72,
       lng: 115.17
@@ -295,7 +295,7 @@ export const mockLocations: SurfLocation[] = [
     id: "r8s9t0u1-v2w3-4567-1234-890123456789",
     name: "Intermediate Surf Coaching",
     address: "Uluwatu, Bali",
-    type: SurfLocationType.SURF_COACHING,
+    type: SurfBusinessType.SURF_COACHING,
     latLng: {
       lat: -8.831,
       lng: 115.084
@@ -312,7 +312,7 @@ export const mockLocations: SurfLocation[] = [
     id: "s9t0u1v2-w3x4-5678-2345-901234567890",
     name: "Legian Beach",
     address: "Legian Beach, Bali",
-    type: SurfLocationType.SURF_SPOT,
+    type: SurfBusinessType.SURF_SPOT,
     latLng: {
       lat: -8.71,
       lng: 115.16
@@ -329,7 +329,7 @@ export const mockLocations: SurfLocation[] = [
     id: "t0u1v2w3-x4y5-6789-3456-012345678901",
     name: "Bali Surf Photography - Komang",
     address: "Canggu, Bali",
-    type: SurfLocationType.PHOTOGRAPHY,
+    type: SurfBusinessType.PHOTOGRAPHY,
     latLng: {
       lat: -8.647,
       lng: 115.129

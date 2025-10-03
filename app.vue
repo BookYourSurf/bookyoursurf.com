@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 useHead({
   title: "Bookyoursurf",
   meta: [
@@ -47,8 +47,8 @@ useHead({
 
 <style lang="scss">
 html {
-  font-size: 14px;
-  line-height: 24px;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -56,7 +56,7 @@ html {
   box-sizing: border-box;
 
   @include for-tablet-landscape-down {
-    font-size: 14px;
+    font-size: $base-font-size;
   }
 }
 

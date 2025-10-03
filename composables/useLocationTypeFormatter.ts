@@ -1,36 +1,36 @@
-import { SurfLocationType } from "~/types/types"
+import { SurfBusinessType } from "~/types/types"
 
-export const useLocationTypeFormatter = () => {
-  const getLocationTypeLabel = (type: SurfLocationType): string => {
-    const typeLabels: Record<SurfLocationType, string> = {
-      [SurfLocationType.SURF_SPOT]: "Surf Spot",
-      [SurfLocationType.SURF_SHOP]: "Surf Lessons",
-      [SurfLocationType.SURF_GUIDE]: "Surf Guide",
-      [SurfLocationType.SURF_COACHING]: "Surf Coaching",
-      [SurfLocationType.PHOTOGRAPHY]: "Photography"
+export const useBusinessTypeFormatter = () => {
+  const getBusinessTypeLabel = (type: SurfBusinessType): string => {
+    const typeLabels: Record<SurfBusinessType, string> = {
+      [SurfBusinessType.SURF_SPOT]: "Surf Spot",
+      [SurfBusinessType.SURF_SHOP]: "Surf Lessons",
+      [SurfBusinessType.SURF_GUIDE]: "Surf Guide",
+      [SurfBusinessType.SURF_COACHING]: "Surf Coaching",
+      [SurfBusinessType.PHOTOGRAPHY]: "Photography"
     }
     return typeLabels[type] || type
   }
 
-  const getLocationLink = (location: {
+  const getBusinessLink = (business: {
     name: string
-    type: SurfLocationType
+    type: SurfBusinessType
     id: string
   }): string => {
-    const pathMap: Record<SurfLocationType, string> = {
-      [SurfLocationType.SURF_SPOT]: "/spots",
-      [SurfLocationType.SURF_SHOP]: "/shops",
-      [SurfLocationType.SURF_GUIDE]: "/guides",
-      [SurfLocationType.SURF_COACHING]: "/coaching",
-      [SurfLocationType.PHOTOGRAPHY]: "/photography"
+    const pathMap: Record<SurfBusinessType, string> = {
+      [SurfBusinessType.SURF_SPOT]: "/spots",
+      [SurfBusinessType.SURF_SHOP]: "/shops",
+      [SurfBusinessType.SURF_GUIDE]: "/guides",
+      [SurfBusinessType.SURF_COACHING]: "/coaching",
+      [SurfBusinessType.PHOTOGRAPHY]: "/photography"
     }
 
-    const basePath = pathMap[location.type] || "/spots"
-    return `${basePath}/${location.id}`
+    const basePath = pathMap[business.type] || "/spots"
+    return `${basePath}/${business.id}`
   }
 
   return {
-    getLocationTypeLabel,
-    getLocationLink
+    getBusinessTypeLabel,
+    getBusinessLink
   }
 }

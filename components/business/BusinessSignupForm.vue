@@ -59,10 +59,10 @@
         required
       />
       <Input
-        v-model="r$.$value.location"
-        :errors="r$.location.$errors"
-        label="Location"
-        name="location"
+        v-model="r$.$value.business"
+        :errors="r$.business.$errors"
+        label="Business"
+        name="business"
       />
     </Form>
   </div>
@@ -89,7 +89,7 @@ const { r$ } = useRegle(
     businessName: "",
     businessType: "",
     websiteUrl: "",
-    location: ""
+    business: ""
   },
   {
     email: { email, required },
@@ -98,7 +98,7 @@ const { r$ } = useRegle(
     businessName: { required },
     businessType: { required },
     websiteUrl: { required, url },
-    location: { required }
+    business: { required }
   },
   {
     silent: true,

@@ -14,34 +14,34 @@
 </template>
 
 <script setup lang="ts">
-import type { SurfLocation } from "~/types/types"
-import { SurfLocationType } from "~/types/types"
+import type { SurfBusiness } from "~/types/types"
+import { SurfBusinessType } from "~/types/types"
 
 const props = defineProps<{
   map: google.maps.Map
   position: google.maps.LatLngLiteral
-  location: SurfLocation
+  business: SurfBusiness
 }>()
 
 const markerContent = ref<HTMLElement>()
 let marker: google.maps.marker.AdvancedMarkerElement
-const { selectedLocation, selectLocation } = useSurfLocations()
+const { selectedBusiness, selectBusiness } = useSurfBusinesses()
 
-// Map location types to icon names
-const iconMap: Record<SurfLocationType, string> = {
-  [SurfLocationType.SURF_SPOT]: "surf-spot",
-  [SurfLocationType.SURF_SHOP]: "surf-shop",
-  [SurfLocationType.SURF_GUIDE]: "surf-guide",
-  [SurfLocationType.SURF_COACHING]: "surf-coaching",
-  [SurfLocationType.PHOTOGRAPHY]: "photography"
+// Map business types to icon names
+const iconMap: Record<SurfBusinessType, string> = {
+  [SurfBusinessType.SURF_SPOT]: "surf-spot",
+  [SurfBusinessType.SURF_SHOP]: "surf-shop",
+  [SurfBusinessType.SURF_GUIDE]: "surf-guide",
+  [SurfBusinessType.SURF_COACHING]: "surf-coaching",
+  [SurfBusinessType.PHOTOGRAPHY]: "photography"
 }
 
 const markerIcon = computed(() => {
-  return iconMap[props.location.type] || "surf-spot"
+  return iconMap[props.business.type] || "surf-spot"
 })
 
 const isActive = computed(() => {
-  return selectedLocation.value?.id === props.location.id
+  return selectedBusiness.value?.id === props.business.id
 })
 
 onMounted(() => {
@@ -52,7 +52,7 @@ onMounted(() => {
       content: toRaw(markerContent.value)
     })
     marker.addListener("gmp-click", () => {
-      selectLocation(props.location)
+      selectBusiness(props.business)
     })
   }
 })

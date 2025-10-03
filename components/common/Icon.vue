@@ -43,6 +43,23 @@ const icon = props.icon && (await icons?.[props.icon]?.())
     color: $white;
   }
 }
+.icon--12x12 {
+  width: 12px;
+  height: 12px;
+  :deep(svg) {
+    width: 12px;
+    height: 12px;
+  }
+}
+.icon--13x13 {
+  width: 13px;
+  height: 13px;
+  :deep(svg) {
+    width: 13px;
+    height: 13px;
+  }
+}
+
 .icon--15x15 {
   width: 15px;
   height: 15px;

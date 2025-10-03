@@ -17,8 +17,11 @@ $primary-orange--950: #160a03;
 
 // Brand colors
 $primary-orange: $primary-orange--500;
-$primary-orange-hover: rgba($primary-orange, 0.05);
+$primary-orange-hover: rgba($primary-orange, 0.85);
 $grey-hover: #f7f7f7;
+
+// Error colors
+$error-red: #ef4444;
 
 // Radius
 $border-radius: 4px;

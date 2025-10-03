@@ -29,6 +29,10 @@
     }
   }
 
+  &.button--light-grey {
+    background-color: $light-grey;
+  }
+
   &.button--fullwidth {
     width: 100%;
   }

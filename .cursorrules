@@ -1,0 +1,199 @@
+# BookYourSurf.com - AI Assistant Rules
+
+## Project Overview
+
+This is a Nuxt 3 surf business discovery platform built with Vue 3, TypeScript, and SCSS. The app helps users find surf spots, shops, guides, coaching, and photography services in Bali.
+
+## Tech Stack
+
+- **Framework**: Nuxt 3 with Vue 3
+- **Language**: TypeScript
+- **Styling**: SCSS with custom variables
+- **Maps**: Google Maps API with Leaflet
+- **Validation**: Regle (Vue validation library)
+- **Package Manager**: Yarn
+- **Linting**: ESLint with Nuxt config
+- **Formatting**: Prettier
+
+## Code Style & Standards
+
+### Vue Components
+
+- Use Composition API with `<script setup>`
+- Follow PascalCase for component names
+- Use kebab-case for component files
+- Always define TypeScript interfaces for props and data
+- Use single-file components (.vue) with template, script, and style sections
+- Keep components focused and single-purpose
+
+### TypeScript
+
+- Define interfaces in `/types/types.ts`
+- Use strict typing for all props, emits, and data
+- Import types explicitly when needed
+- Follow the existing enum pattern for SurfBusinessType
+
+### SCSS Styling
+
+- Use SCSS variables from `/assets/styles/variables/`
+- Follow BEM methodology for CSS classes
+- Use the existing color palette and design tokens
+- Import variables using the configured SCSS setup
+- Keep styles scoped to components when possible
+- Use the established spacing and sizing patterns
+- **Use minimal CSS - do as little styling as possible**
+
+### File Organization
+
+- Components are organized by feature in `/components/`
+- Common components go in `/components/common/`
+- Feature-specific components in their respective folders
+- Icons in `/assets/icons/` as SVG files
+- Images in `/public/images/` organized by category
+- Styles in `/assets/styles/` with modular SCSS structure
+
+## Development Guidelines
+
+### Component Structure
+
+```vue
+<template>
+  <!-- Use semantic HTML -->
+</template>
+
+<script setup lang="ts">
+// Define interfaces
+interface Props {
+  // typed props
+}
+
+// Define props with defaults
+const props = withDefaults(defineProps<Props>(), {
+  // defaults
+})
+
+// Define emits
+const emit = defineEmits<{
+  // typed emits
+}>()
+
+// Composition logic
+</script>
+
+<style lang="scss" scoped>
+// Component-specific styles using SCSS variables
+</style>
+```
+
+### Naming Conventions
+
+- **Files**: kebab-case (e.g., `surf-business-list.vue`)
+- **Components**: PascalCase (e.g., `SurfBusinessList`)
+- **Variables**: camelCase (e.g., `SurfBusinesss`)
+- **CSS Classes**: kebab-case (e.g., `surf-business-list`)
+- **Constants**: UPPER_SNAKE_CASE (e.g., `SURF_SPOT`)
+
+### Google Maps Integration
+
+- Use the `useGoogleMaps` composable for map functionality
+- Follow the existing pattern for map components
+- Handle loading states and error cases
+- Use the configured Google Maps API key from runtime config
+
+### Data Management
+
+- Use composables for data fetching and state management
+- Follow the existing pattern in `/composables/`
+- Mock data should be in `/mocks/` directory
+- Use TypeScript interfaces for all data structures
+
+## Code Quality
+
+### Linting & Formatting
+
+- Follow ESLint rules (configured in `eslint.config.mjs`)
+- Use Prettier for code formatting
+- Run `yarn lint:fix` before committing
+- Run `yarn format` for consistent formatting
+
+### Performance
+
+- Use lazy loading for images and components when appropriate
+- Optimize bundle size by importing only needed dependencies
+- Follow Vue 3 best practices for reactivity
+- Use proper key attributes in v-for loops
+
+### Accessibility
+
+- Use semantic HTML elements
+- Include proper ARIA labels where needed
+- Ensure keyboard navigation works
+- Maintain proper color contrast ratios
+
+## Project-Specific Patterns
+
+### Surf Business Components
+
+- Use the `SurfBusiness` interface for type safety
+- Follow the existing filter and list patterns
+- Implement proper rating display with `ItemRating` component
+- Use the established map integration patterns
+
+### Form Components
+
+- Use the Regle validation library
+- Follow the existing form component patterns
+- Implement proper error handling and validation messages
+- Use the `ValidationError` component for error display
+
+### Navigation
+
+- Use the existing `Navigation` component
+- Follow the established routing patterns
+- Implement proper active state handling
+
+## Git Workflow
+
+- Work on the `develop` branch
+- Create feature branches for new features
+- Use descriptive commit messages
+- Test changes before committing
+- Follow the existing file organization patterns
+
+## Environment Setup
+
+- Use Yarn as the package manager
+- Set up environment variables for Google Maps API
+- Follow the existing development server setup
+- Use the configured build and deployment scripts
+
+## Common Commands
+
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn lint` - Run linting
+- `yarn format` - Format code
+- `yarn generate` - Generate static site
+
+## When Making Changes
+
+1. Always read existing code to understand patterns
+2. Follow the established component structure
+3. Use existing SCSS variables and design tokens
+4. Maintain TypeScript type safety
+5. Test changes in the development environment
+6. Follow the existing naming conventions
+7. Keep components focused and reusable
+8. Update types when adding new data structures
+
+## Code Review Checklist
+
+- [ ] TypeScript types are properly defined
+- [ ] SCSS follows the established variable system
+- [ ] Minimal CSS approach is followed
+- [ ] Component follows Vue 3 Composition API patterns
+- [ ] Proper error handling is implemented
+- [ ] Accessibility considerations are addressed
+- [ ] Performance implications are considered
+- [ ] Code follows the established naming conventions
+- [ ] No console.log statements in production code

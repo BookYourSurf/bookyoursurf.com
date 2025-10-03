@@ -17,7 +17,7 @@ ul {
   list-style: none;
 }
 .error__message {
-  color: #ef4444;
+  color: $error-red;
   font-size: 0.875rem;
 }
 </style>

@@ -18,69 +18,50 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  modelValue: {
-    type: [String, Number],
-    default: ""
-  },
-  errors: {
-    type: Array<string>,
-    default: []
-  },
-  label: {
-    type: String,
-    required: true
-  },
-  type: { type: String, default: "text" },
-  placeholder: {
-    type: String,
-    default: ""
-  },
-  disabled: Boolean,
-  required: {
-    type: Boolean,
-    default: false
-  },
-  readonly: Boolean,
-  name: {
-    type: String,
-    default: ""
-  },
-  id: {
-    type: String,
-    default: ""
-  },
-  autofocus: {
-    type: Boolean,
-    default: false
-  },
-  autocomplete: {
-    type: Boolean,
-    default: false
-  },
-  maxlength: {
-    type: Number,
-    default: 0
-  },
-  minlength: {
-    type: Number,
-    default: 0
-  },
-  pattern: {
-    type: String,
-    default: ""
-  },
-  step: {
-    type: Number,
-    default: 0
-  },
-  title: {
-    type: String,
-    default: ""
-  }
+interface Props {
+  modelValue: string | number
+  errors: string[]
+  label: string
+  type?: string
+  placeholder?: string
+  disabled?: boolean
+  required?: boolean
+  readonly?: boolean
+  name?: string
+  id?: string
+  autofocus?: boolean
+  autocomplete?: boolean
+  maxlength?: number
+  minlength?: number
+  pattern?: string
+  step?: number
+  title?: string
+}
+
+interface Emits {
+  (e: "update:modelValue", value: string | number): void
+}
+
+withDefaults(defineProps<Props>(), {
+  modelValue: "",
+  errors: () => [],
+  type: "text",
+  placeholder: "",
+  disabled: false,
+  required: false,
+  readonly: false,
+  name: "",
+  id: "",
+  autofocus: false,
+  autocomplete: false,
+  maxlength: 0,
+  minlength: 0,
+  pattern: "",
+  step: 0,
+  title: ""
 })
 
-defineEmits(["update:modelValue"])
+defineEmits<Emits>()
 </script>
 
 <style lang="scss" scoped>
@@ -88,7 +69,7 @@ defineEmits(["update:modelValue"])
   width: 100%;
 }
 label {
-  background: white;
+  background: $white;
   position: relative;
   bottom: -12px;
   left: 8px;

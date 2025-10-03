@@ -1,15 +1,26 @@
-export interface SurfLocation {
+export interface SurfBusiness {
   id: string
   name: string
   address: string
-  type: SurfLocationType
+  type: SurfBusinessType
   latLng: GeoPoint
-  aggregatedRating: SurfLocationRating
+  aggregatedRating: Rating
   image: string
   description: string
 }
 
-export interface SurfLocationRating {
+export interface SurfActivity {
+  id: string
+  name: string
+  address: string
+  type: SurfBusinessType
+  latLng: GeoPoint
+  aggregatedRating: Rating
+  image: string
+  description: string
+}
+
+export interface Rating {
   rating: number
   reviewCount: number
 }
@@ -19,7 +30,7 @@ export interface GeoPoint {
   lng: number
 }
 
-export enum SurfLocationType {
+export enum SurfBusinessType {
   SURF_SPOT = "Surf Spot",
   SURF_SHOP = "Surf Shop",
   SURF_GUIDE = "Surf Guide",

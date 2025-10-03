@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   devtools: {
     enabled: true,
 
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     "~/components/home",
     "~/components/form",
     "~/components/business",
-    "~/components/surflocation",
+    "~/components/surfbusiness",
     "~/components/item"
   ],
   css: ["/assets/styles/index.scss"],

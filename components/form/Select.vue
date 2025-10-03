@@ -38,49 +38,44 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  modelValue: {
-    type: [String, Number, Array],
-    default: ""
-  },
-  errors: {
-    type: Array<string>,
-    default: []
-  },
-  label: {
-    type: String,
-    required: true
-  },
-  options: {
-    type: Object,
-    required: true
-  },
-  multiple: { type: Boolean, default: false },
-  placeholder: {
-    type: String,
-    default: ""
-  },
-  disabled: Boolean,
-  required: Boolean,
-  name: {
-    type: String,
-    default: ""
-  },
-  id: {
-    type: String,
-    default: ""
-  },
-  class: {
-    type: String,
-    default: ""
-  },
-  autocomplete: {
-    type: Boolean,
-    default: false
-  }
+interface SelectOption {
+  value: string | number
+  label: string
+}
+
+interface Props {
+  modelValue: string | number | Array<string | number>
+  errors: string[]
+  label: string
+  options: SelectOption[]
+  multiple?: boolean
+  placeholder?: string
+  disabled?: boolean
+  required?: boolean
+  name?: string
+  id?: string
+  class?: string
+  autocomplete?: boolean
+}
+
+interface Emits {
+  (e: "update:modelValue", value: string | number | Array<string | number>): void
+}
+
+withDefaults(defineProps<Props>(), {
+  modelValue: "",
+  errors: () => [],
+  multiple: false,
+  placeholder: "",
+  disabled: false,
+  required: false,
+  name: "",
+  id: "",
+  class: "",
+  autocomplete: false
 })
 
-defineEmits(["update:modelValue"]) // Emits update event for v-model
+defineEmits<Emits>()
 </script>
 
 <style lang="scss" scoped>
@@ -88,7 +83,7 @@ defineEmits(["update:modelValue"]) // Emits update event for v-model
   width: 100%;
 }
 label {
-  background: white;
+  background: $white;
   position: relative;
   bottom: -12px;
   left: 8px;

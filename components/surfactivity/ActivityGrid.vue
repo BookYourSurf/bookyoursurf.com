@@ -1,7 +1,7 @@
 <template>
   <div class="activity-grid">
     <ActivityCard
-      v-for="activity in activities"
+      v-for="activity in surfActivities"
       :key="activity.id"
       :activity="activity"
     />
@@ -9,8 +9,10 @@
 </template>
 
 <script setup lang="ts">
+import type { SurfActivity } from '~/types/types';
+
 defineProps<{
-  activities: SurfActivity[]
+  surfActivities: SurfActivity[]
 }>()
 </script>
 

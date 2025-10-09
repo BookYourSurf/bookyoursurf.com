@@ -1,8 +1,13 @@
 <template>
-    <div class="index"></div>
+    <div class="index">
+        <ActivityGrid></ActivityGrid>
+
+    </div>
   </template>
   
-  <script setup lang="ts"></script>
+  <script setup lang="ts">
+
+</script>
   
   <style lang="scss" scoped></style>
   

@@ -1,5 +1,5 @@
 <template>
-  <div class="surf-business-list-item__container" ref="listItemRef" :class="{selected: isSelected}">
+  <div class="surf-business-list-item__container item" ref="listItemRef" :class="{selected: isSelected}">
     <div
       class="surf-business-list-item flex-row"
       :class="{ selected: isSelected }"
@@ -65,7 +65,7 @@ watch(isSelected, (newValue) => {
 
 <style lang="scss" scoped>
 .surf-business-list-item__container {
-  padding: $padding-item $padding-item 0 $padding-item;
+  padding-bottom: 0;
   border-radius: $border-radius;
   border: 1px solid transparent;
   max-width: 420px;
@@ -73,19 +73,16 @@ watch(isSelected, (newValue) => {
   &:hover:not(.as-card) {
     background-color: rgba($primary-orange, 0.05);
     border-left: 4px solid $primary-orange;
-    // padding-left: calc($padding-item - 4px);
   }
 
   &.selected:not(.as-card) {
     background-color: rgba($primary-orange, 0.05);
     border-left: 4px solid $primary-orange;
-    // padding-left: calc($padding-item - 4px);
   }
 
   &.as-card {
     background-color: $white;
     position: relative;
-    margin: $padding-item;
   } 
 }
 
@@ -95,7 +92,7 @@ watch(isSelected, (newValue) => {
   min-width: 420px;
   width: 100%;
   border-bottom: 1px solid $light-grey;
-  padding: 0 0 $padding-item 0;
+  padding: 0 0 $container-padding 0;
   cursor: pointer;
 
   &.selected {

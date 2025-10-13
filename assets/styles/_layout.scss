@@ -1,0 +1,17 @@
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+.item {
+  padding: $item-padding;
+}
+
+.card {
+  padding: $item-padding;
+}
+
+.section {
+  padding: $section-padding;
+}

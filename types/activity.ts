@@ -24,6 +24,13 @@ export enum Language {
   FRENCH = "French"
 }
 
+export enum ActivityType {
+  LESSONS = "Lessons",
+  COACHING = "Coaching",
+  PHOTOGRAPHY = "Photography",
+  RENTAL = "Rental"
+}
+
 export interface Activity {
   id: string
   businessId: string

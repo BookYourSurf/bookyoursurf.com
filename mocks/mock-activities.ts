@@ -137,7 +137,7 @@ export const mockSurfLessonActivities: SurfLessonActivity[] = [
       "Perfect introduction to surfing with our experienced instructors. Learn the basics in safe, gentle waves at one of Bali's most popular surf spots.",
     price: generatePrice(),
     currency: "USD",
-    images: ["/images/surf-coaching/beginner-lessons.jpg"],
+    images: ["/images/activities/surf-lessons/beginner-echo-beach.jpg"],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -184,7 +184,7 @@ export const mockSurfLessonActivities: SurfLessonActivity[] = [
       "One-on-one instruction tailored to your skill level. Perfect for rapid progress and personalized attention.",
     price: generatePrice() + 50, // More expensive for private
     currency: "USD",
-    images: ["/images/surf-coaching/beginner-lessons.jpg"],
+    images: ["/images/activities/surf-lessons/private-kuta-beach.jpg"],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -242,7 +242,7 @@ export const mockSurfLessonActivities: SurfLessonActivity[] = [
       "Take your surfing to the next level with our intermediate coaching program. Focus on technique refinement and wave reading.",
     price: generatePrice() + 25,
     currency: "USD",
-    images: ["/images/surf-coaching/intermediate-coaching.jpg"],
+    images: ["/images/activities/surf-lessons/intermediate-uluwatu.jpg"],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -310,7 +310,9 @@ export const mockSurfCoachingActivities: SurfCoachingActivity[] = [
       "Master the art of wave reading and positioning for maximum performance. Learn to identify the best take-off spots and optimize your positioning.",
     price: generatePrice() + 40,
     currency: "USD",
-    images: ["/images/surf-coaching/advanced-coaching.jpg"],
+    images: [
+      "/images/activities/surf-coaching/advanced-wave-reading-uluwatu.jpg"
+    ],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -364,7 +366,9 @@ export const mockSurfCoachingActivities: SurfCoachingActivity[] = [
       "Learn the techniques and timing for riding barrels. Perfect your tube riding skills with expert guidance and video analysis.",
     price: generatePrice() + 60,
     currency: "USD",
-    images: ["/images/surf-coaching/advanced-coaching.jpg"],
+    images: [
+      "/images/activities/surf-coaching/barrel-riding-padang-padang.jpg"
+    ],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -417,7 +421,7 @@ export const mockSurfPhotographyActivities: SurfPhotographyActivity[] = [
       "Capture your surfing moments at Uluwatu's legendary waves. Professional surf photography with drone and water camera coverage.",
     price: generatePrice() + 30,
     currency: "USD",
-    images: ["/images/photography/agung.jpg"],
+    images: ["/images/activities/surf-photography/action-uluwatu-agung.jpg"],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -459,9 +463,9 @@ export const mockSurfPhotographyActivities: SurfPhotographyActivity[] = [
       editing: true
     },
     portfolio: [
-      "/images/photography/portfolio-1.jpg",
-      "/images/photography/portfolio-2.jpg",
-      "/images/photography/portfolio-3.jpg"
+      "/images/activities/surf-photography/uluwatu-action-1.jpg",
+      "/images/activities/surf-photography/uluwatu-action-2.jpg",
+      "/images/activities/surf-photography/uluwatu-action-3.jpg"
     ],
     delivery: {
       digital: true,
@@ -477,7 +481,7 @@ export const mockSurfPhotographyActivities: SurfPhotographyActivity[] = [
       "Document your Canggu surf experience with a mix of action shots and lifestyle photography. Perfect for social media and memories.",
     price: generatePrice(),
     currency: "USD",
-    images: ["/images/photography/sari.jpg"],
+    images: ["/images/activities/surf-photography/lifestyle-canggu-sari.jpg"],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -520,9 +524,9 @@ export const mockSurfPhotographyActivities: SurfPhotographyActivity[] = [
       editing: true
     },
     portfolio: [
-      "/images/photography/portfolio-4.jpg",
-      "/images/photography/portfolio-5.jpg",
-      "/images/photography/portfolio-6.jpg"
+      "/images/activities/surf-photography/canggu-lifestyle-1.jpg",
+      "/images/activities/surf-photography/canggu-lifestyle-2.jpg",
+      "/images/activities/surf-photography/canggu-lifestyle-3.jpg"
     ],
     delivery: {
       digital: true,
@@ -538,7 +542,9 @@ export const mockSurfPhotographyActivities: SurfPhotographyActivity[] = [
       "Explore multiple surf spots with professional photography coverage. Perfect for capturing your entire Bali surf journey.",
     price: generatePrice() + 80,
     currency: "USD",
-    images: ["/images/photography/komang.jpg"],
+    images: [
+      "/images/activities/surf-photography/multi-location-tour-komang.jpg"
+    ],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -582,9 +588,9 @@ export const mockSurfPhotographyActivities: SurfPhotographyActivity[] = [
       editing: true
     },
     portfolio: [
-      "/images/photography/portfolio-7.jpg",
-      "/images/photography/portfolio-8.jpg",
-      "/images/photography/portfolio-9.jpg"
+      "/images/activities/surf-photography/multi-location-1.jpg",
+      "/images/activities/surf-photography/multi-location-2.jpg",
+      "/images/activities/surf-photography/multi-location-3.jpg"
     ],
     delivery: {
       digital: true,
@@ -604,7 +610,7 @@ export const mockSurfRentalActivities: SurfRentalActivity[] = [
       "Rent high-quality surfboards for your Canggu surf adventure. All boards are professionally maintained and ready to ride.",
     price: generatePrice(),
     currency: "USD",
-    images: ["/images/surf-shops/canggu-surf-shop.jpg"],
+    images: ["/images/activities/surf-rental/premium-canggu.jpg"],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -646,7 +652,7 @@ export const mockSurfRentalActivities: SurfRentalActivity[] = [
       "Rent professional-grade surfboards for tackling Uluwatu's challenging waves. All boards are competition-ready and maintained to the highest standards.",
     price: generatePrice() + 20,
     currency: "USD",
-    images: ["/images/surf-shops/uluwatu-surf-shop.jpg"],
+    images: ["/images/activities/surf-rental/performance-uluwatu.jpg"],
     isActive: true,
     isApproved: true,
     rating: generateRating(),
@@ -705,7 +711,7 @@ export const mockSurfRentalActivities: SurfRentalActivity[] = [
       "Perfect for beginners and intermediate surfers. Soft boards and stable shapes for learning and progression.",
     price: generatePrice() - 10,
     currency: "USD",
-    images: ["/images/surf-shops/seminyak-surf-shop.jpg"],
+    images: ["/images/activities/surf-rental/beginner-seminyak.jpg"],
     isActive: true,
     isApproved: true,
     rating: generateRating(),

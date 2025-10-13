@@ -4,6 +4,8 @@
  * they will be injected into every sfc and result in a lot of duplicate css for the end-user
  */
 
-@forward "variables";
+@forward "tokens";
 @forward "responsive";
 @forward "typography";
+@forward "colors";
+@forward "layout";

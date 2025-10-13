@@ -1,4 +1,3 @@
-import type { Activity } from "./activity"
 import type { GeoPoint, Rating } from "./common"
 
 export enum SurfBusinessType {
@@ -18,7 +17,6 @@ export interface SurfBusiness {
   aggregatedRating: Rating
   image: string
   description: string
-  activities: Activity[]
   isActive: boolean
   isApproved: boolean
 }

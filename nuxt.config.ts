@@ -21,8 +21,7 @@ export default defineNuxtConfig({
     "~/components/home",
     "~/components/form",
     "~/components/business",
-    "~/components/surfbusiness",
-    "~/components/item"
+    "~/components/activity"
   ],
   css: ["/assets/styles/index.scss"],
   modules: [

@@ -1,5 +1,5 @@
 <template>
-  <div class="surf-business-filter padding--item">
+  <div class="surf-business-filter item">
     
     <FilterTabs
       v-model="selectedType"

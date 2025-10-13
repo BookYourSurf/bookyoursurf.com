@@ -1,0 +1,79 @@
+// Grid layouts
+.grid {
+  display: grid;
+  gap: 1rem;
+
+  &.grid-gap-0-5 {
+    gap: 0.5rem;
+  }
+
+  &.grid-gap-1 {
+    gap: 1rem;
+  }
+
+  &.grid-gap-1-5 {
+    gap: 1.5rem;
+  }
+
+  &.grid-gap-2 {
+    gap: 2rem;
+  }
+}
+
+// 3-column responsive grid
+.grid-3-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include for-tablet-portrait-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include for-tablet-landscape-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.grid-gap-0-5 {
+    gap: 0.5rem;
+  }
+
+  &.grid-gap-1 {
+    gap: 1rem;
+  }
+
+  &.grid-gap-1-5 {
+    gap: 1.5rem;
+  }
+
+  &.grid-gap-2 {
+    gap: 2rem;
+  }
+}
+
+// Alternative 3-column grid with different breakpoints
+.grid-3-columns-alt {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @include for-tablet-landscape-up {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &.grid-gap-0-5 {
+    gap: 0.5rem;
+  }
+
+  &.grid-gap-1 {
+    gap: 1rem;
+  }
+
+  &.grid-gap-1-5 {
+    gap: 1.5rem;
+  }
+
+  &.grid-gap-2 {
+    gap: 2rem;
+  }
+}

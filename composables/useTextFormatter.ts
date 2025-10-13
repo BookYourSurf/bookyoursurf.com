@@ -13,8 +13,12 @@ export const useTextFormatter = () => {
       '<span class="highlighted-text">$1</span>'
     )
   }
+  const formatPrice = (price: number): string => {
+    return `$ ${price}`
+  }
 
   return {
-    formatTextWithUnderscores
+    formatTextWithUnderscores,
+    formatPrice
   }
 }

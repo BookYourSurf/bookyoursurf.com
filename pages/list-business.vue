@@ -9,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import BusinessHeroSection from "~/components/business/BusinessHeroSection.vue"
 </script>
 
 <style lang="scss" scoped>

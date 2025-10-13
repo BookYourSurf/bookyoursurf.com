@@ -1,7 +1,3 @@
-.padding--item {
-  padding: $padding-item $padding-item;
-}
-
 @function decimal-to-class($value) {
   $integer: floor($value);
   $decimal: round(($value - $integer) * 100);

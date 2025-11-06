@@ -149,7 +149,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: space-between;
   padding: $padding-button;
-  border-radius: $border-radius-pill;
+  border-radius: $border-radius-full;
   transition:
     border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;

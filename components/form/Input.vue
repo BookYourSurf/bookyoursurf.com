@@ -21,7 +21,7 @@
 interface Props {
   modelValue: string | number
   errors: string[]
-  label: string
+  label?: string
   type?: string
   placeholder?: string
   disabled?: boolean
@@ -58,7 +58,8 @@ withDefaults(defineProps<Props>(), {
   minlength: 0,
   pattern: "",
   step: 0,
-  title: ""
+  title: "",
+  label: undefined
 })
 
 defineEmits<Emits>()

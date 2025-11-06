@@ -4,6 +4,7 @@
       <NuxtLink to="/">
         <Icon icon="logo" class="navigation__logo color-primary-orange"></Icon>
       </NuxtLink>
+      <Search></Search>
       <ul class="navigation__items">
         <li class="navigation__item">
           <NuxtLink to="/list-business"> How it works </NuxtLink>

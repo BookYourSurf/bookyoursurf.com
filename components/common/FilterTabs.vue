@@ -92,7 +92,7 @@ const selectOption = (value: string | null) => {
 
 .filter-tabs__tab {
   white-space: nowrap;
-  border-radius: $border-radius-pill;
+  border-radius: $border-radius-full;
 }
 
 .filter-tabs__tab-content {

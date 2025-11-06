@@ -8,14 +8,13 @@
   &.justify-center {
     justify-content: center;
   }
-}
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
+  &.gap {
+    gap: $flex-gap;
+  }
+  &.row {
+    flex-direction: row;
+  }
+  &.column {
+    flex-direction: column;
+  }
 }

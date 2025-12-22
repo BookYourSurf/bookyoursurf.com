@@ -1,17 +1,28 @@
 <template>
   <div class="index">
     <HomeHeroSection
-      class="mt-2-0"
-      image="./images/surf_lesson_bali.png"
-      heading="One app for all&nbsp;things _surfing_"
-      content="Discover trusted coaches, breathtaking surf photography, unforgettable lessons, local guides, and the gear that keeps you moving—all in one seamless app for every surfer."
+      class="mt-6-0"
+      base-text="One app for all things "
+      :words="['guiding', 'coaching', 'lessons', 'surfing']"
+      :animation-options="{
+        typingSpeed: 100,
+        pauseDuration: 2000,
+        deleteSpeed: 50,
+        initialDelay: 500,
+        deleteDelay: 100
+      }"
     ></HomeHeroSection>
-    <HomeEmailSignup
-      class="index__home-email-signup"
-      heading="Join the journey"
-      content="We’re building a all-in-one surf app—and you can watch it unfold. Get behind-the-scenes updates and be ready when it launches."
-      submit-text="Notify me!"
-    />
+    <!-- <HomeImageBanner
+    class="mt-12-0"
+      :images="[
+        '/images/surf_lesson_bali.png',
+        'images/activities/surf-photography/canggu-lifestyle-3.jpg',
+        '/images/places/bells-beach.jpg',
+        '/images/places/pipeline.jpg',
+        '/images/surf-photography/sayulita-photography.jpg',
+        '/images/surf-photography/sayulita-photography.jpg'
+      ]"
+    ></HomeImageBanner> -->
   </div>
 </template>
 
@@ -23,10 +34,7 @@
   background-size: cover;
   width: 100%;
   position: absolute;
-  height: 100%;
-}
-.index__home-email-signup {
-  position: relative;
-  top: -120px;
+  height: 80%;
+  overflow: hidden;
 }
 </style>

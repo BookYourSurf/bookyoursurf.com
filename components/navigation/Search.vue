@@ -1,14 +1,15 @@
 <template>
-    <div ref="searchRef" class="search">
+    <div ref="searchRef" class="search" :class="`search--${variant}`">
       <Input
         :model-value="query"
         class="search__input"
         name="search"
+        :icon="variant != 'default' ? 'search' : undefined"
         :errors="error ? [error] : []"
         placeholder="Search for businesses, places, or breaks..."
         @update:model-value="query = String($event)"
         @focus="showDropdown = true"
-      />
+        />
   
       <div v-if="showDropdown && results.length > 0" class="search__dropdown flex gap column item">
         <NuxtLink
@@ -28,7 +29,6 @@
           </div>
         </NuxtLink>
         <NuxtLink
-          v-if="totalResults > 6"
           :to="`/search?q=${encodeURIComponent(query)}`"
           class="search__footer"
           @click="showDropdown = false"
@@ -42,6 +42,14 @@
   <script setup lang="ts">
   import type { SearchSuggestion } from "~/types/search"
   import { mockSearchSuggestions } from "~/mocks/mock-search-suggestions"
+  
+  interface Props {
+    variant?: 'default' | 'hero'
+  }
+  
+  withDefaults(defineProps<Props>(), {
+    variant: 'default'
+  })
   
   const router = useRouter()
   const query = ref("")
@@ -100,22 +108,45 @@
 <style lang="scss" scoped>
 .search__option {
     width: 100%;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 .search {
     max-width: 400px;
     width: 400px;
 }
+
 .search__input {
     :deep(input) {
      border-radius: $border-radius-full;
     }
 }
+
+.search--hero {
+    box-shadow: $box-shadow-container;
+    border-radius: $border-radius-double;
+
+    :deep(input) {
+        border-color: $white;
+    }
+    :deep(.input) {
+        padding: $padding-input-larger;
+        border-radius: $border-radius-double;
+    }
+}
 .search__dropdown {
     background-color: $white;
     position: absolute;
+    width: 500px;
+    border-radius: $border-radius-container;
 }
 
 .search__option-image {
     width: 50px;
+    overflow: hidden;
+    :deep(.image) {
+        transition: transform 0.3s ease;
+    }
 }
 </style>

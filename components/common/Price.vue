@@ -1,5 +1,5 @@
 <template>
-  <div class="item-price flex-row">
+  <div class="item-price flex row">
     <span class="item-price__currency">$</span>
     <span class="item-price__amount bolder">{{
       formatPrice(amount)

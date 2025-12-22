@@ -1,7 +1,7 @@
 <template>
   <div class="surf-business-list-item__container item" ref="listItemRef" :class="{selected: isSelected}">
     <div
-      class="surf-business-list-item flex-row"
+      class="surf-business-list-item flex row"
       :class="{ selected: isSelected }"
       @click="handleItemClick"
     >

@@ -1,5 +1,5 @@
 <template>
-  <div class="item-rating flex-row">
+  <div class="item-rating flex row">
     <Icon
       class="item-rating__star icon--15x15"
       :class="rating > 3.5 ? 'color-primary-orange' : 'color-grey'"

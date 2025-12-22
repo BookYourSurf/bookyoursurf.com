@@ -2,12 +2,18 @@
 $border-radius: 4px;
 $border-radius-container: 8px;
 $border-radius-full: 24px;
+$border-radius-double: 48px;
 
 // Shadows
 $box-shadow: 0 5px 5px rgb(0 0 0 / 4%);
+$box-shadow-container: 0px 7px 29px rgba(149, 157, 165, 0.2);
 
 // Button
 $padding-button: 0.5rem 1rem;
+
+// Input
+$padding-input: 8px 12px;
+$padding-input-larger: 8px 24px;
 
 // Navigation
 $navigation-height: 80px;

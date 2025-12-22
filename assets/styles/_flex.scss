@@ -11,6 +11,15 @@
   &.gap {
     gap: $flex-gap;
   }
+  &.gap-32 {
+    gap: 32px;
+  }
+  &.gap-48 {
+    gap: 32px;
+  }
+  &.gap-64 {
+    gap: 64px;
+  }
   &.row {
     flex-direction: row;
   }

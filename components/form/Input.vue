@@ -1,18 +1,21 @@
 <template>
   <div class="input">
     <label v-if="label" :for="id ? id : name">{{ label }}</label>
-    <input
-      v-bind="$attrs"
-      :id="id ? id : name"
-      :type="type"
-      :placeholder="placeholder && !label ? placeholder : undefined"
-      :name="name"
-      :value="modelValue"
-      :autocomplete="autocomplete ? 'on' : 'off'"
-      @input="
-        $emit('update:modelValue', ($event.target as HTMLInputElement).value)
-      "
-    />
+    <div class="input__wrapper flex row align-center center">
+      <Icon v-if="icon" :icon="icon" class="input__icon w-fit-content icon--15x15" />
+      <input
+        v-bind="$attrs"
+        :id="id ? id : name"
+        :type="type"
+        :placeholder="placeholder && !label ? placeholder : undefined"
+        :name="name"
+        :value="modelValue"
+        :autocomplete="autocomplete ? 'on' : 'off'"
+        @input="
+          $emit('update:modelValue', ($event.target as HTMLInputElement).value)
+        "
+      />
+    </div>
     <ValidationError :errors="errors" />
   </div>
 </template>
@@ -36,6 +39,7 @@ interface Props {
   pattern?: string
   step?: number
   title?: string
+  icon?: string
 }
 
 interface Emits {
@@ -59,7 +63,8 @@ withDefaults(defineProps<Props>(), {
   pattern: "",
   step: 0,
   title: "",
-  label: undefined
+  label: undefined,
+  icon: undefined
 })
 
 defineEmits<Emits>()
@@ -78,12 +83,17 @@ label {
 }
 input {
   width: 100%;
-  padding: 8px 12px;
+  padding: $padding-input;
   outline: none;
   border: 1px solid $grey;
   border-radius: $border-radius;
   &:focus {
-    border: 2px solid $primary-orange--300;
+    border: 1px solid $primary-orange--300;
+  }
+}
+.input__wrapper--with-icon {
+  input {
+    padding-left: 40px;
   }
 }
 </style>

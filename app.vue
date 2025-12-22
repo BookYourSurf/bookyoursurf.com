@@ -1,11 +1,13 @@
 <template>
   <div class="layout">
-    <Navigation />
+    <Navigation :search="!isIndexPage" />
     <NuxtPage />
   </div>
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
+const isIndexPage = computed(() => route.path === '/')
 useHead({
   title: "Bookyoursurf",
   meta: [

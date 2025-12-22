@@ -4,7 +4,7 @@
       <NuxtLink to="/">
         <Icon icon="logo" class="navigation__logo color-primary-orange"></Icon>
       </NuxtLink>
-      <Search></Search>
+      <Search v-if="search"></Search>
       <ul class="navigation__items">
         <li class="navigation__item">
           <NuxtLink to="/list-business"> How it works </NuxtLink>
@@ -23,7 +23,13 @@
 </template>
 
 <script setup lang="ts">
-// Component logic will go here
+interface Props {
+  search?: boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  search: true
+})
 </script>
 
 <style lang="scss" scoped>
